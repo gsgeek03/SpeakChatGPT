@@ -18,15 +18,6 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
     )
     return response.choices[0].message["content"]
 
-prompt=start()
-print(f"YOU: {prompt}")
-result=get_completion(f"Give result in 300 words or less {prompt}")
-print(result)
-
-if len(result)<3000:
-    speak(result)
-
-speak("Have a good day Boss")
 
 
 
