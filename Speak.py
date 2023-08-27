@@ -5,22 +5,18 @@
 #windows based
 # adv - Fast, Offline accessable
 #disadv - Can't Interrupt it while it is speaking, Less Voices.
+import pythoncom  # Import pythoncom first
 import pyttsx3
 from Listen import *
 def speak(Text):
     #sapi5 is windows api which will help us to connect
     engine=pyttsx3.init("sapi5")
     voices = engine.getProperty('voices')
-    for voice in  voices:
-        print(voice)
     engine.setProperty('voices',voices[0].id)
     engine.setProperty('rate',180)
-    print(f"You : {Text}")
     engine.say(Text)
     engine.runAndWait()
 
-text=start()
-speak(text)
 
 
 #chrome based

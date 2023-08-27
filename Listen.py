@@ -15,7 +15,7 @@ def Listen():
         r.pause_threshold=1
         audio= r.listen(source,0,8)
     try:
-        print("Recognizing your voice sir.....")
+        print("Translating into English sir....")
         query=r.recognize_google(audio,language="hi")
     except:
         return "Error occuring while recognizing"
@@ -35,4 +35,3 @@ def start():
     query=Listen()
     result=Translation(query)
     return result
-print(start())
